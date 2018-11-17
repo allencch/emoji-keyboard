@@ -75,20 +75,20 @@ keyboard_visible = False
 search_visible = False
 
 def check_wayland():
-
-	sessions = run(
-		['loginctl', 'list-sessions'], stdout=PIPE, universal_newlines=True)
-	current_user = getpass.getuser()
-	current_user = current_user if current_user != 'root' else os.getlogin()
-	for line in sessions.stdout.split('\n'):
-		if current_user in line:
-			session = line.split()[0]
-	type_ = run(
-		['loginctl', 'show-session', session, '-p', 'Type'],
-		stdout=PIPE, universal_newlines=True)
-	if type_.stdout == 'Type=x11\n':
-		return False
-	return True
+	return False
+	# sessions = run(
+	# 	['loginctl', 'list-sessions'], stdout=PIPE, universal_newlines=True)
+	# current_user = getpass.getuser()
+	# current_user = current_user if current_user != 'root' else os.getlogin()
+	# for line in sessions.stdout.split('\n'):
+	# 	if current_user in line:
+	# 		session = line.split()[0]
+	# type_ = run(
+	# 	['loginctl', 'show-session', session, '-p', 'Type'],
+	# 	stdout=PIPE, universal_newlines=True)
+	# if type_.stdout == 'Type=x11\n':
+	# 	return False
+	# return True
 
 def get_keycode():
 

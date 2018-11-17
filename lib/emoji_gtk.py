@@ -404,7 +404,7 @@ class Search(Gtk.Window):
 
 	def __init__(self):
 
-		Gtk.Window.__init__(self, title='Search emoji', skip_taskbar_hint=True)
+		Gtk.Window.__init__(self, title='Search emoji')
 		self.set_keep_above(True)
 		self.set_resizable(False)
 		self.set_icon_name(shared.icon)
